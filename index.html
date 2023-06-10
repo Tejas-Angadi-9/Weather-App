@@ -17,12 +17,13 @@
         </div>
 
         <div class="error">
-            <p>Invalid City name</p>
             <img class="img-not-found">
+            <p>Invalid City name</p>
         </div>
 
         <div class="weather">
-            <img src="images/rain.png" class="weather-icon">
+            <img src="" class="weather-icon">
+            <p class="weather-info"></p>
             <h1 class="temp"></h1>
             <h2 class="city"></h2>
             <div class="details">
@@ -52,6 +53,7 @@ const searchBox = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
 const weatherIcon = document.querySelector(".weather-icon");
 const notFound = document.querySelector(".img-not-found");
+const weatherInfo = document.querySelector(".weather-info");
 
 async function checkWeather(city){
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
@@ -71,21 +73,27 @@ async function checkWeather(city){
     
     // update the image
     if(data.weather[0].main == "Clouds"){
+        weatherInfo.innerText = "Cloudy";
         weatherIcon.src = "images/clouds.png";
     }
     else if(data.weather[0].main == "Clear"){
+        weatherInfo.innerText = "Clear";
         weatherIcon.src = "images/clear.png";
     }
     else if(data.weather[0].main == "Rain"){
+        weatherInfo.innerText = "Rainy";
         weatherIcon.src = "images/rain.png";
     }
     else if(data.weather[0].main == "Drizzle"){
+        weatherInfo.innerText = "Drizzle";
         weatherIcon.src = "images/drizzle.png";
     }
     else if(data.weather[0].main == "Mist"){
+        weatherInfo.innerText = "Misty";
         weatherIcon.src = "images/mist.png";
     }
     else if(data.weather[0].main == "Snow"){
+        weatherInfo.innerText = "Snowy";
         weatherIcon.src = "images/snow.png";
     }
     document.querySelector(".weather").style.display = "block";

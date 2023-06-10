@@ -115,10 +115,15 @@ body {
 }
 
 .img-not-found {
-    margin-top: -30px;
+    margin-top: -40px;
     width: 250px;
     align-items: center;
 
+}
+
+.weather-info{
+    font-size: 26px;
+    margin-bottom: 15px;
 }
 
 @media(max-width: 650px) {
