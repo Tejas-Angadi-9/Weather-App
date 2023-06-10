@@ -58,7 +58,7 @@ async function checkWeather(city){
     if(response.status == 404){
         document.querySelector(".error").style.display = "block";
         document.querySelector(".weather").style.display = "none";
-        notFound.src= "images/not-found.png";
+        notFound.src= "images/no-location-found.webp";
     }
     else{
         var data = await response.json();
