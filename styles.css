@@ -118,7 +118,7 @@ body {
         flex: 1;
     }
     .card{
-        margin-top: 30px;
+        margin-top: 32px;
         max-width: 340px;
         flex-wrap: wrap;
     }
