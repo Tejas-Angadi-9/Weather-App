@@ -119,7 +119,6 @@ body {
     }
     .card{
         max-width: 350px;
-        height: 600px;
         flex-wrap: wrap;
     }
     .details{
