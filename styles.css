@@ -163,9 +163,8 @@ body {
 
 @media(max-width: 650px) {
     .search input {
-        width: 50%;
+        width: 77%;
         height: 30%;
-        flex: 1;
     }
 
     .card {
@@ -198,20 +197,22 @@ body {
         justify-content: center;
     }
     .options{
-        width: 100% 0;
+        margin-top: 13px;
+        margin-bottom: 17px;
+        width: 210px;
         align-items: center;
         display: flex;
         justify-content: space-between;
     }
     .your-weather{
-        margin-right: 10px;
+        margin-right: 2px;
         align-items: center;
     }
     .search-weather{
-        margin-left: 10px;
+        margin-left: 2px;
         align-items: center;
     }
     .options-heading{
-        font-size: 11px;
+        font-size: 12px;
     }
 }
