@@ -145,5 +145,3 @@ getLocation();
 if(getLocation){
     grantLocation.style.display = "none";
 }
-
-
