@@ -63,7 +63,7 @@ body {
 
 .weather-icon {
     width: 170px;
-    margin-top: -10px;
+    margin-top: 22px;
 }
 
 .weather h1 {
@@ -131,9 +131,11 @@ body {
 
 .options{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    margin: 100% auto;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    margin-left: auto;
 }
 
 .options-heading{
@@ -198,12 +200,12 @@ body {
         justify-content: center;
     }
     .options{
-        margin-top: 16px;
-        margin-bottom: 17px;
-        width: 230px;
+        margin-top: 5px;
+        margin-bottom: 20px;
+        /* width: 230px; */
         align-items: center;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
     }
     .your-weather{
         margin-right: 2px;
