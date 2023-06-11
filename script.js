@@ -50,6 +50,7 @@ function showData(data){
     document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
     document.querySelector(".wind").innerHTML = data.wind.speed + " Km/h";  
     document.querySelector(".countryFlag").src = `http://flagcdn.com/144x108/${data?.sys?.country.toLowerCase()}.png`; 
+    document.querySelector(".countryName").innerText = data.sys.country;
     // update the image
     if(data.weather[0].main == "Clouds"){
         weatherInfo.innerText = "Cloudy";

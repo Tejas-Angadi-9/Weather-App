@@ -170,6 +170,10 @@ body {
     margin-top: 12px;
 }
 
+.countryName{
+    margin-top: 12px;
+}
+
 @media(max-width: 650px) {
     .search input {
         width: 77%;
