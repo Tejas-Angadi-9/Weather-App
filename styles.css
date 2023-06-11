@@ -166,6 +166,7 @@ body {
 
 .countryFlag{
     width: 47px;
+    border-radius: 6px;
     margin-bottom: 19px;
     margin-top: 12px;
     /* margin-left: -64px; */
