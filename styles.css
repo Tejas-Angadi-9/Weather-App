@@ -132,7 +132,8 @@ body {
 .options{
     display: flex;
     justify-content: space-between;
-    margin: 30px;
+    align-items: center;
+    margin: 100% auto;
 }
 
 .options-heading{
@@ -197,9 +198,9 @@ body {
         justify-content: center;
     }
     .options{
-        margin-top: 13px;
+        margin-top: 16px;
         margin-bottom: 17px;
-        width: 210px;
+        width: 230px;
         align-items: center;
         display: flex;
         justify-content: space-between;
@@ -213,6 +214,7 @@ body {
         align-items: center;
     }
     .options-heading{
-        font-size: 12px;
+        font-size: 13px;
+        font-weight: 600;
     }
 }
