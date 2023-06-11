@@ -108,10 +108,14 @@ body {
 
 .error {
     text-align: center;
-    margin-left: 10px;
-    font-size: 22px;
-    margin-top: 25px;
+    margin-top: 20px;
     display: none;
+}
+
+.error p {
+    margin-top: -15px;
+    align-items: center;
+    font-size: 28px;
 }
 
 .img-not-found {
@@ -120,9 +124,9 @@ body {
     align-items: center;
 }
 
-.weather-info{
-    font-size: 26px;
-    margin-bottom: 15px;
+.weather-info {
+    font-size: 27px;
+    margin-bottom: 25px;
 }
 
 @media(max-width: 650px) {
