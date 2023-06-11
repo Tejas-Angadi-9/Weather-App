@@ -165,13 +165,20 @@ body {
 }
 
 .countryFlag{
-    width: 100px;
-    margin-bottom: 32px;
+    width: 47px;
+    margin-bottom: 19px;
     margin-top: 12px;
+    /* margin-left: -64px; */
 }
 
 .countryName{
     margin-top: 12px;
+}
+.flagContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
 }
 
 @media(max-width: 650px) {
