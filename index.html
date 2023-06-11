@@ -1,119 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App | Tejas Angadi</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="card">
-        <h1>Weather App</h1>
-        <div class="search">
-            <input type="text" placeholder="Enter any city name" spellcheck="false">
-             <button type="submit"><img src="images/search.png"></button>
+      <h1>Weather App</h1>
 
+      <!-- 2 parts your location and search weather -->
+      <div class="options">
+        <div class="your-weather">
+          <p class="options-heading your-heading">Your Weather</p>
         </div>
 
-        <div class="error">
-            <img class="img-not-found">
-            <p>Invalid City name</p>
+        <div class="search-weather">
+          <p class="options-heading search-heading">Search Weather</p>
         </div>
+      </div>
 
-        <div class="weather">
-            <img src="" class="weather-icon">
-            <p class="weather-info"></p>
-            <h1 class="temp"></h1>
-            <h2 class="city"></h2>
-            <div class="details">
-                <div class="col">
-                    <img src="images/humidity.png">
-                    <div>
-                        <p class="humidity"></p>
-                        <p>humidity</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <img src="images/wind.png">
-                    <div>
-                        <p class="wind"></p>
-                        <p>Wind Speed</p>
-                    </div>
-                </div>
+      <!-- Grant location access -->
+      <div class="grant-location-container">
+        <img
+          src="images/location.png"
+          width="100"
+          height="100"
+          class="grantLocationnImg"
+          loading="lazy"
+        />
+        <h3 class="grantLocationHeading">Grant location access</h3>
+        <p class="grantLocationpara">Allow access to get weather information</p>
+
+        <p class="demo"></p>
+      </div>
+
+      <div class="search">
+        <input
+          type="text"
+          placeholder="Enter any city name"
+          spellcheck="false"
+        />
+        <button type="submit"><img src="images/search.png" /></button>
+      </div>
+
+      <div class="error">
+        <img class="img-not-found" />
+        <p>Invalid City name</p>
+      </div>
+
+      <div class="weather">
+        <img src="" class="weather-icon" />
+        <p class="weather-info"></p>
+        <h1 class="temp"></h1>
+        <h2 class="city"></h2>
+        <div class="details">
+          <div class="col">
+            <img src="images/humidity.png" />
+            <div>
+              <p class="humidity"></p>
+              <p>humidity</p>
             </div>
+          </div>
+          <div class="col">
+            <img src="images/wind.png" />
+            <div>
+              <p class="wind"></p>
+              <p>Wind Speed</p>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
-<script>
-const apiKey = "74b3f14e2c1371a66b49acbd2187555b";
-const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
-
-const searchBox = document.querySelector(".search input");
-const searchBtn = document.querySelector(".search button");
-const weatherIcon = document.querySelector(".weather-icon");
-const notFound = document.querySelector(".img-not-found");
-const weatherInfo = document.querySelector(".weather-info");
-
-async function checkWeather(city){
-    const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
-    if(response.status == 404){
-        document.querySelector(".error").style.display = "block";
-        document.querySelector(".weather").style.display = "none";
-        notFound.src= "images/no-location-found.webp";
-    }
-    else{
-        var data = await response.json();
-    }
-    
-    document.querySelector(".city").innerHTML = data.name;
-    document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°c";
-    document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-    document.querySelector(".wind").innerHTML = data.wind.speed + " Km/h"; 
-    
-    // update the image
-    if(data.weather[0].main == "Clouds"){
-        weatherInfo.innerText = "Cloudy";
-        weatherIcon.src = "images/clouds.png";
-    }
-    else if(data.weather[0].main == "Clear"){
-        weatherInfo.innerText = "Clear";
-        weatherIcon.src = "images/clear.png";
-    }
-    else if(data.weather[0].main == "Rain"){
-        weatherInfo.innerText = "Rainy";
-        weatherIcon.src = "images/rain.png";
-    }
-    else if(data.weather[0].main == "Drizzle"){
-        weatherInfo.innerText = "Drizzle";
-        weatherIcon.src = "images/drizzle.png";
-    }
-    else if(data.weather[0].main == "Mist"){
-        weatherInfo.innerText = "Misty";
-        weatherIcon.src = "images/mist.png";
-    }
-    else if(data.weather[0].main == "Snow"){
-        weatherInfo.innerText = "Snowy";
-        weatherIcon.src = "images/snow.png";
-    }
-    document.querySelector(".weather").style.display = "block";
-    document.querySelector(".error").style.display = "none";
-    
-}
-searchBtn.addEventListener("click", () => {
-    checkWeather(searchBox.value);
-})
-
-searchBox.addEventListener("keypress", (e)=>{
-    if(e.key == 'Enter'){
-        checkWeather(searchBox.value);
-    }
-});
-
-
-
-
-</script>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

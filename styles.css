@@ -63,7 +63,7 @@ body {
 
 .weather-icon {
     width: 170px;
-    margin-top: 30px;
+    margin-top: -10px;
 }
 
 .weather h1 {
@@ -129,6 +129,38 @@ body {
     margin-bottom: 25px;
 }
 
+.options{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+}
+
+.options-heading{
+    cursor: pointer;
+    text-align: center;
+    font-size: 17px;
+    padding: 7px;
+    font-weight: 700;
+}
+
+.active{
+    background-color: rgba(96, 95, 95, 0.567);
+    border-radius: 10px;
+}
+
+.grant-location-container{
+    align-items: center;
+    margin: 30px;
+}
+
+.grantLocationHeading{
+    margin: 20px;
+}
+
+.grantLocationpara{
+    font-size: 17px;
+}
+
 @media(max-width: 650px) {
     .search input {
         width: 50%;
@@ -164,5 +196,22 @@ body {
         height: 40px;
         align-items: center;
         justify-content: center;
+    }
+    .options{
+        width: 100% 0;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+    .your-weather{
+        margin-right: 10px;
+        align-items: center;
+    }
+    .search-weather{
+        margin-left: 10px;
+        align-items: center;
+    }
+    .options-heading{
+        font-size: 11px;
     }
 }
