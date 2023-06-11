@@ -14,6 +14,7 @@ const weather = document.querySelector(".weather");
 const yourWeather = document.querySelector(".your-heading");
 const searchWeather = document.querySelector(".search-weather");
 const grantLocation = document.querySelector(".grant-location-container");
+const countryIcon = document.querySelector(".countryFlag");
 
 async function checkWeatherCity(city){
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
@@ -47,8 +48,8 @@ function showData(data){
     document.querySelector(".city").innerHTML = data.name;
     document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°c";
     document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-    document.querySelector(".wind").innerHTML = data.wind.speed + " Km/h"; 
-    
+    document.querySelector(".wind").innerHTML = data.wind.speed + " Km/h";  
+    document.querySelector(".countryFlag").src = `http://flagcdn.com/144x108/${data?.sys?.country.toLowerCase()}.png`; 
     // update the image
     if(data.weather[0].main == "Clouds"){
         weatherInfo.innerText = "Cloudy";

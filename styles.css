@@ -164,6 +164,12 @@ body {
     font-size: 17px;
 }
 
+.countryFlag{
+    width: 100px;
+    margin-bottom: 28px;
+    margin-top: 12px;
+}
+
 @media(max-width: 650px) {
     .search input {
         width: 77%;
