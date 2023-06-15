@@ -17,14 +17,23 @@ const grantLocation = document.querySelector(".grant-location-container");
 const countryIcon = document.querySelector(".countryFlag");
 
 async function checkWeatherCity(city){
-    const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
-    if(response.status == 404){
-        document.querySelector(".error").style.display = "block";
-        document.querySelector(".weather").style.display = "none";
-        notFound.src= "images/no-location-found.webp";
-    }
+        const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+        if(response.status == 404){
+            document.querySelector(".error").style.display = "block";
+            document.querySelector(".weather").style.display = "none";
+            notFound.src= "images/no-location-found.webp";
+            document.querySelector(".emptySearchBox").style.display = "none";
+        }
+        else if(city == ""){
+            document.querySelector(".emptySearchBox").style.display = "block";
+            document.querySelector(".error").style.display = "none";
+            document.querySelector(".weather").style.display = "none";
+            // notFound.src= "images/no-location-found.webp";
+            console.log("Enter the city name");
+        }
     else{
         let data = await response.json();
+        document.querySelector(".emptySearchBox").style.display = "none";
         showData(data);
     }      
 }
@@ -34,14 +43,15 @@ async function checkWeatherLatLong(lat,lon){
     if(response.status == 404){
         document.querySelector(".error").style.display = "block";
         document.querySelector(".weather").style.display = "none";
+        document.querySelector(".emptySearchBox").style.display = "none";
         notFound.src= "images/no-location-found.webp";
     }
     else{
         let data = await response.json();
+        document.querySelector(".emptySearchBox").style.display = "none";
         showData(data);
     }    
 }
-
 
 function showData(data){
 

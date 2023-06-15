@@ -182,6 +182,13 @@ body {
     gap: 12px;
 }
 
+.emptySearchBox{
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 22px;
+    display: none;
+}
+
 @media(max-width: 650px) {
     .search input {
         width: 77%;
